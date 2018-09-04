@@ -1,0 +1,33 @@
+div class="jumbotron jumbotron-fluid"
+  div class="container"
+    h1 class="display-4" = @agent.full_name
+    p class="lead" = @agent.bio
+div class="row justify-content-md-center" style="margin-bottom:2rem;"
+  div class="col-xl-4 col-lg-4 col-md-4 col-sm-4"
+    = link_to "Add Transaction", new_agent_uploaded_transactions_path(@agent), class: "btn btn-primary btn-block"
+div class="row"
+    div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"
+      div class="card"
+        div class="card-header" Recent Transactions
+        div class="card-body"
+          table class="table table-hover"
+            thead
+              tr
+                th Address
+                th Listed
+                th Listing Price
+                th Sold
+                th Selling Price
+            tbody
+              - @uploaded_transactions.each do |uploaded_transaction|
+                tr
+                  td = uploaded_transaction.full_address
+                  td = uploaded_transaction.listing_date
+                  td = uploaded_transaction.listing_price
+                  td = uploaded_transaction.selling_date
+                  td = uploaded_transaction.selling_price
+              div class="container"
+                div class="row justify-content-md-center"
+                  div class="col-xl-auto col-lg-auto col-md-auto col-sm-auto"
+                    = paginate @uploaded_transactions
+
