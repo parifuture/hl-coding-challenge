@@ -1,45 +1,31 @@
 var cols = [];
-cols.push({ title: 'Address'});
-cols.push({ title: 'Listed'});
-cols.push({ title: 'Listing Price'});
-cols.push({ title: 'Sold'});
-cols.push({ title: 'Selling Price'});
-
-function commaSeparateNumber(val) {
-    if (val != null && val != undefined && val != '') {
-        while (/(\d+)(\d{3})/.test(val.toString())) {
-            val = val.toString().replace(/(\d+)(\d{3})/, '$1' + ',' + '$2');
-        }
-    }
-    return val;
-}
+cols.push({ title: 'address'});
+cols.push({ title: 'listing_date'});
+cols.push({ title: 'listing_price'});
+cols.push({ title: 'selling_date'});
+cols.push({ title: 'selling_price'});
 
 $(document).ready(function() {
-    // $('#table').dataTable({
-    //     "order": [
-    //         [0, "desc"]
-    //     ],
-    //     dom: 'lfrtBip',
-    //     scrollX: true,
-    //     columns: cols,
-    //     fixedHeader: {
-    //         header: true,
-    //         footer: true
-    //     },
-    //     responsive: false,
-    //     bAutoWidth: true,
-    //     pagingType:'input',
-    //     language: {
-    //         emptyTable: "No data available in table"
-    //     },
-    //     columnDefs: [{
-    //         "render": function (datenter, code, herea, type, row) {
-    //             return commaSeparateNumber(datenter);
-    //         },
-    //         "targets": [2,4]
-    //     }]
-    // });
-    // const table = $('table').DataTable();
+    $('#table').dataTable({
+        processing: true,
+        serverSide: true,
+        ajax: $('#table').data('source'),
+        // dom: 'lfrtBip',
+        columns: cols,
+        searching: true,
+        ordering: true,
+        lengthMenu: [10,25,50,100],
+        fixedHeader: {
+            header: true,
+            footer: true
+        },
+        bAutoWidth: true,
+        pagingType:'input',
+        language: {
+            emptyTable: "No data available in table"
+        },
+    });
+    const table = $('#table').DataTable();
 
 });
 

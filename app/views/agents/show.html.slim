@@ -10,8 +10,19 @@ div class="row"
       div class="card"
         div class="card-header" Recent Transactions
         div class="card-body"
-          table class="table table-hover"
+          table class="table table-hover" id="dataTable" data-source="<%= users_path(format: :json) %>"
             thead
+              tr class="filters"
+                th 
+                  input
+                th 
+                  input
+                th 
+                  input
+                th 
+                  input
+                th 
+                  input
               tr
                 th Address
                 th Listed
@@ -19,15 +30,15 @@ div class="row"
                 th Sold
                 th Selling Price
             tbody
-              - @uploaded_transactions.each do |uploaded_transaction|
-                tr
-                  td = uploaded_transaction.full_address
-                  td = uploaded_transaction.listing_date
-                  td = uploaded_transaction.listing_price
-                  td = uploaded_transaction.selling_date
-                  td = uploaded_transaction.selling_price
-              div class="container"
-                div class="row justify-content-md-center"
-                  div class="col-xl-auto col-lg-auto col-md-auto col-sm-auto"
-                    = paginate @uploaded_transactions
+              / - @uploaded_transactions.each do |uploaded_transaction|
+              /   tr
+              /     td = uploaded_transaction.full_address
+              /     td = uploaded_transaction.listing_date
+              /     td = uploaded_transaction.listing_price
+              /     td = uploaded_transaction.selling_date
+              /     td = uploaded_transaction.selling_price
+              / div class="container"
+              /   div class="row justify-content-md-center"
+              /     div class="col-xl-auto col-lg-auto col-md-auto col-sm-auto"
+              /       = paginate @uploaded_transactions
 

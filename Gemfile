@@ -18,6 +18,7 @@ gem "jquery-rails"
 gem "bootstrap"
 gem "kaminari"
 gem "pry"
+gem "ajax-datatables-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
@@ -27,6 +28,7 @@ group :development, :test do
   gem "factory_girl"
   gem "database_cleaner"
   gem "faker", "~> 1.8"
+  gem "rspec-rails"
 end
 
 group :development do
