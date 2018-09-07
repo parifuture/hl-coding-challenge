@@ -45,13 +45,13 @@ div class="row justify-content-md-center"
                   = f.text_field :zip, class: "form-control"
                 .form-group
                   = f.label :listing_date
-                  = f.text_field :listing_date, class: "form-control"
+                  = f.text_field :listing_date, class: "form-control", data: { provide: "datepicker" }
                 .form-group
                   = f.label :listing_price
                   = f.text_field :listing_price, class: "form-control"
                 .form-group
                   = f.label :selling_date
-                  = f.text_field :selling_date, class: "form-control"
+                  = f.text_field :selling_date, class: "form-control", data: { provide: "datepicker" }
                 .form-group
                   = f.label :selling_price
                   = f.text_field :selling_price, class: "form-control"
