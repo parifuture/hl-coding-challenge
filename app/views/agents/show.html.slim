@@ -10,6 +10,10 @@ div class="row"
       div class="card"
         div class="card-header" Recent Transactions
         div class="card-body"
+          div class="container"
+              div class="row justify-content-md-center"
+                div class="col-xl-auto col-lg-auto col-md-auto col-sm-auto"
+                  = paginate @uploaded_transactions
           table class="table table-hover"
             thead
               tr
@@ -26,8 +30,8 @@ div class="row"
                   td = uploaded_transaction.listing_price
                   td = uploaded_transaction.selling_date
                   td = uploaded_transaction.selling_price
-              div class="container"
-                div class="row justify-content-md-center"
-                  div class="col-xl-auto col-lg-auto col-md-auto col-sm-auto"
-                    = paginate @uploaded_transactions
+          div class="container"
+            div class="row justify-content-md-center"
+              div class="col-xl-auto col-lg-auto col-md-auto col-sm-auto"
+                = paginate @uploaded_transactions
 

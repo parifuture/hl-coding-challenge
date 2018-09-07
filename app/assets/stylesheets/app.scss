@@ -1,11 +1,21 @@
 @import "bootstrap";
 
 body {
-    background-color: #EFEFEF;
+  background-color: #efefef;
 }
 
 .jumbotron {
-    background-color: #FFF;
-    border-radius: 0.4rem;
-    margin-top: 2rem;
+  background-color: #fff;
+  border-radius: 0.4rem;
+  margin-top: 2rem;
+}
+
+.form-container-styled {
+  padding: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+  border-width: 0.2rem;
+  position: relative;
+  margin: 1rem -15px 0;
+  border: solid #f7f7f9;
 }

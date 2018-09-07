@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20180904025738) do
     t.string "property_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["listing_agent_id", "selling_agent_id", "property_type", "selling_date"], name: "add_indexes_on_upload_transactions"
+    t.index ["address", "zip", "selling_date"], name: "index_uploaded_transactions_on_addr_zip_sell_date", unique: true
     t.index ["listing_agent_id"], name: "index_uploaded_transactions_on_listing_agent_id"
     t.index ["selling_agent_id"], name: "index_uploaded_transactions_on_selling_agent_id"
   end
