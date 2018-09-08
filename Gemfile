@@ -19,6 +19,7 @@ gem "bootstrap"
 gem "kaminari"
 gem "pry"
 gem 'bootstrap-datepicker-rails'
+gem 'jquery-validation-rails'
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

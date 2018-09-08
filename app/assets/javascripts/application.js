@@ -16,4 +16,6 @@
 //= require popper
 //= require bootstrap
 //= require bootstrap-datepicker
+//= require jquery.validate
+//= require validation
 //= require_tree .
